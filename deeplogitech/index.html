@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Stories</title>
+    <style>
+        /* Define CSS styles for the marquee */
+        #latestStories {
+            font-size: 100px; /* Change font size as needed */
+            color: blue; /* Change color as needed */
+        }
+    </style>
 </head>
 <body>
-    <h1>Latest Stories</h1>
-    <ul id="storiesList"></ul>
+    <marquee id="latestStories" behavior="scroll" direction="right">Latest Stories</marquee>
+        <ul id="storiesList"></ul>
 
     <script>
         async function fetchLatestStories() {
