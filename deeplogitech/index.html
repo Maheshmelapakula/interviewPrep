@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Stories</title>
+</head>
+<body>
+    <h1>Latest Stories</h1>
+    <ul id="storiesList"></ul>
+
+    <script>
+        async function fetchLatestStories() {
+            try {
+                const response = await fetch('/latest-stories');
+                const data = await response.json();
+                const storiesList = document.getElementById('storiesList');
+
+                data.forEach((story, index) => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${index + 1}. ${story}`;
+                    storiesList.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching latest stories:', error);
+            }
+        }
+
+        // Fetch latest stories when the page loads
+        fetchLatestStories();
+    </script>
+</body>
+</html>
