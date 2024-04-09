@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Stories</title>
     <style>
-        /* Define CSS styles for the marquee */
+        /* Define CSS styles for the marquee  */
         #latestStories {
             font-size: 100px; 
             color: blue; /* Change color as needed */
@@ -19,7 +19,7 @@
     <script>
         async function fetchLatestStories() {
             try {
-                const response = await fetch('/latest-stories');
+                const response = await fetch('/latest-stories')
                 const data = await response.json();
                 const storiesList = document.getElementById('storiesList');
 
